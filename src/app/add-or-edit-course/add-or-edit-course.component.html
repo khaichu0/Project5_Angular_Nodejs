@@ -1,0 +1,25 @@
+<form [formGroup]="formvalue" (ng-submit)="courseSubmit();">
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="form-group">
+                <input type="hidden" formControlName="course_id">
+                <label for="name">Tên Khóa học</label>
+                <input type="text" name="" formControlName="course_name" placeholder="Nhập tên khóa học" aria-describedby="helpId">
+                <label for="maLoai">Mã loại</label><br>
+                <input formControlName="course_group_id"type="text" name=""  > <br>                                
+                <label for="file">Ảnh đại diện:</label><br>
+                <div style="display: flex;">
+                    <img ng-if="image_url" src="" style="width: 100px; height: 100px; margin-right: 10px;"  placeholder="" aria-describedby="helpId">
+                    <input type="file" file="file" id = "file"/>
+                </div>
+                <label for="donGia">Đơn giá</label>
+                <input formControlName="course_price" type="number" name=""   placeholder="" aria-describedby="helpId">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" value="{{ submit }}" class="btn btn-primary">{{submit}}</button>
+    </div>
+</form>
+

@@ -1,0 +1,75 @@
+ <!-- Container Fluid-->
+ <div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">Trang chủ</h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./">Home</a></li>
+        <li class="breadcrumb-item">Tables</li>
+        <li class="breadcrumb-item active" aria-current="page">Khóa Học</li>
+      </ol>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 mb-4">
+        <!-- Simple Tables -->
+        <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">Thêm mới</button>
+        <div class="card">
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th>STT</th>
+                  <th>Tên khóa học</th>
+                  <th>Giáo viên</th>
+                  <th>Mức giá</th>
+                  <th>Hình ảnh</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of course">
+                  <td>1234</td>
+                  <td>{{item.course_name}}</td>
+                  <td>{{item.course_teacher }}</td>
+                  <td><span class="badge badge-success">Delivered</span></td>
+                  <td></td>
+                  <td>
+                    <a (click)="editCourse()" class="btn btn-warning mr-2 text-light"><i class="fas fa-edit" ></i></a>
+                    <a (click)="deleteCourse()" class="btn btn-danger text-light"><i class="fas fa-trash"></i></a>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+            
+          
+          
+          </div>
+          <div class="card-footer"></div>
+        </div>
+      </div>
+    </div>
+    <!--Row-->
+        <!-- Thêm mới  -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">{{submit}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <app-add-or-edit-course [course]="course" *ngIf(course)>
+                           
+                  </app-add-or-edit-course>
+                  
+              </div>
+          </div>
+      </div>
+   
+  </div>
+  <!---Container Fluid-->
