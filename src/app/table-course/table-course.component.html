@@ -63,10 +63,29 @@
                           <span aria-hidden="true">&times;</span>
                       </button>
                   </div>
-                  <app-add-or-edit-course [course]="course" *ngIf(course)>
-                           
-                  </app-add-or-edit-course>
                   
+                    <form [formGroup]="formvalue" (ng-submit)="courseSubmit();">
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <input type="hidden" formControlName="course_id">
+                                <label for="name">Tên Khóa học</label>
+                                <input type="text" name="" formControlName="course_name" placeholder="Nhập tên khóa học" aria-describedby="helpId">
+                                <label for="maLoai">Mã loại</label><br>
+                                <input formControlName="course_group_id"type="text" name=""> <br>                                
+                                <label for="file">Ảnh đại diện:</label><br>
+                                <label for="donGia">Đơn giá</label>
+                                <input formControlName="course_price" type="number" name=""   placeholder="" aria-describedby="helpId">
+                            </div>
+                        </div>
+                      </div>
+                  
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" value="{{ submit }}" class="btn btn-primary">{{submit}}</button>
+                  </div>
+                  </form>
+                 
               </div>
           </div>
       </div>

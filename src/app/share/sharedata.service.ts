@@ -20,7 +20,7 @@ export class SharedataService {
 
   }
   editCourse(val:any):Observable<Course>{
-    return this.http.put(this.ApiUrl+'/cporse',val);
+    return this.http.put(this.ApiUrl+'/course',val);
   }
   deleteCourse(id_course:string):Observable<Course>{
     return this.http.delete(this.ApiUrl+'/course/'+id_course);
