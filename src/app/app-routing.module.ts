@@ -20,13 +20,9 @@ import { Baitap1Component } from './baitap1/baitap1.component';
 const routes: Routes = [
   {
     path:'home',component:WelcomeAdminComponent,
-   
     children:[
       { path:'',component:ContainerFluidComponent, pathMatch:'full' },
       { path:'course',component:TableCourseComponent}
-  
-
-
       
     ]
 },
@@ -36,7 +32,6 @@ const routes: Routes = [
 {
   path:'sign-in',component:SignInComponent
 },
-
 {
   path:'',redirectTo:'/home',pathMatch:'full'
 
