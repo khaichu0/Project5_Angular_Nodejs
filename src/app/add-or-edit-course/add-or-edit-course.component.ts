@@ -10,12 +10,19 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class AddOrEditCourseComponent implements OnInit {
 
   constructor(private service :SharedataService , private formbuilder:FormBuilder) {  }
- 
+  formvalue!:FormGroup;
   @Input () course:any;
-  @Input() submit?:string;
+  @Input() submit?:String;
 
   ngOnInit(): void {
-    
+    this.formvalue=this.formbuilder.group({
+      course_id:[''],
+      course_name:[''],
+      course_teacher:[''],
+      course_group_id:[''],
+      course_price:['']
+      
+    })
     }
     
   

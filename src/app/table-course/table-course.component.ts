@@ -14,25 +14,19 @@ export class TableCourseComponent implements OnInit {
   course:any;
   coursedata:Course= new Course();
   constructor(private shareData: SharedataService,private formbuilder:FormBuilder) { }
-  formvalue!:FormGroup;
+ 
   ngOnInit(): void {
-    this.formvalue=this.formbuilder.group({
-      course_id:[''],
-      course_name:[''],
-      course_teacher:[''],
-      course_group_id:[''],
-      course_price:['']
-      
-    })
+   
     this.getCoursedata();
   }
   getCoursedata(): void{
     this.shareData.getCourse().subscribe(
       data=>{
         this.course=data;
+        console.log(JSON.stringify(this.course) )
       },
       error=>{
-        console.log("Error: "+error);
+        console.log("Error: "+JSON.stringify(error) );
       })
   }
   postCoursedata(){

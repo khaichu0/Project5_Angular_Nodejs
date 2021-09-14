@@ -2,34 +2,42 @@
     "course":[
         {
             "course_id":1,
-            "course_name": "học tiếng anh trẻ em",
-            "course_teacher":"nguyen huu anh",
+            "course_name": "Học tiếng anh trẻ em",
+            "course_teacher":"Nguyễn Hưng Điền",
             "course_group_id":"lop1",
-            "course_price":1,
+            "course_price":200000,
             "course_image":"abc.jpg"
         },
         {
-            "course_id":1,
-            "course_name": "học tiếng anh thaath vui",
-            "course_teacher":"bui van quynh",
+            "course_id":2,
+            "course_name": "Học tiếng anh thật vui",
+            "course_teacher":"Bùi Văn Quỳnh",
             "course_group_id":"lop1",
-            "course_price":1,
+            "course_price":0,
             "course_image":"abc.jpg"
         },
         {
-            "course_id":1,
-            "course_name": "học tiếng anh bla bla",
-            "course_teacher":"nguyen huu ngoc anh",
+            "course_id":3,
+            "course_name": "Tiếng anh cho lớp mầm",
+            "course_teacher":"Nguyễn Hữu Ngọc Anh",
             "course_group_id":"lop1",
-            "course_price":1,
+            "course_price":200000,
             "course_image":"abc.jpg"
         },
         {
-            "course_id":1,
-            "course_name": "học tiếng anh 12",
-            "course_teacher":"lê văn hung",
-            "course_group_id":"lop1",
-            "course_price":1,
+            "course_id":4,
+            "course_name": "Học tiếng anh 12",
+            "course_teacher":"Lê Văn Hùng",
+            "course_group_id":"lop12",
+            "course_price":100000,
+            "course_image":"abc.jpg"
+        },
+        {
+            "course_id":5,
+            "course_name": "Tiếng anh với giáo viên bản sứ",
+            "course_teacher":"Lê Văn Hùng",
+            "course_group_id":"lop12",
+            "course_price":100000,
             "course_image":"abc.jpg"
         }
     ]
