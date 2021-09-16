@@ -12,22 +12,39 @@ export class AddOrEditCourseComponent implements OnInit {
   constructor(private service :SharedataService , private formbuilder:FormBuilder) {  }
   formvalue!:FormGroup;
   @Input () course:any;
-  @Input() submit?:String;
-
+  @Input() submit!:string;
+  courseData:Course=new Course();
   ngOnInit(): void {
     this.formvalue=this.formbuilder.group({
-      course_id:[''],
-      course_name:[''],
-      course_teacher:[''],
-      course_group_id:[''],
-      course_price:['']
-      
+      item_id:[''],
+      item_name:[''],
+      item_group_id:[''],
+      item_price:0,
+      item_image:['']
     })
-    }
     
+    this.checkSubmit(this.submit,this.course);
+    }
+    onEdit(val:any){
+      this.formvalue.controls['item_id'].setValue(val.item_id);
+      this.formvalue.controls['item_name'].setValue(val.item_name);
+      this.formvalue.controls['item_group_id'].setValue(val.item_group_id);
+      this.formvalue.controls['item_price'].setValue(val.item_price);
+      this.formvalue.controls['item_image'].setValue(val.item_image);
+      console.log(val);
+    }
   
-  courseSubmit():void {
+    courseSubmit():void {
+      if(this.submit=="Thêm mới"){
+        
+      }
+   }
+  checkSubmit(sub:string,val:any): void{
+  if(sub!="Thêm mới")
+    {
+      this.onEdit(val);
 
+    }
   }
 
 }

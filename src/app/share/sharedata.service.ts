@@ -10,19 +10,21 @@ import {catchError, map, tap}from 'rxjs/operators/'
 })
 export class SharedataService {
   
-  readonly ApiUrl='https://localhost:44378'
+  readonly ApiUrl='https://localhost:44378/api/item/'
   constructor(private http: HttpClient )  { }
   getCourse():Observable<Course> {
-    return this.http.get(this.ApiUrl+'/api/item/get-all');
+    return this.http.get(this.ApiUrl+'get-all');
   }
   postCourse( val:any):Observable<Course>{
-    return this.http.post(this.ApiUrl+'/course',val);
+    return this.http.post(this.ApiUrl+'/create-item',val);
 
   }
   editCourse(val:any):Observable<Course>{
-    return this.http.put(this.ApiUrl+'/course',val);
+    return this.http.put(this.ApiUrl+'/update-item',val);
   }
   deleteCourse(id_course:string):Observable<Course>{
-    return this.http.delete(this.ApiUrl+'/course/'+id_course);
+    return this.http.delete(this.ApiUrl+'delete-item/'+id_course);
+   
   }
+    
 }

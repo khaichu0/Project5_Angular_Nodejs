@@ -1,26 +1,24 @@
 
-                    <form [formGroup]="formvalue"  ng-submit="SubmitCourse()">
+                    <form  [formGroup]="formvalue"  ng-submit="SubmitCourse()">
                             <div class="container-fluid">
                                 <div class="form-group">
-                                    <input type="hidden" ng-model="item_id">
-                                    <label for="name">Tên Khóa học</label>
-                                    <input  type="text" formControlName="course_name" name=""  placeholder="Nhập tên khóa học" aria-describedby="helpId">
-                                    <label for="name">Giáo viên</label>
-                                    <input  type="text" formControlName="course_teacher" name=""  placeholder="Chọn giáo viên" aria-describedby="helpId">                                    
+                                    <input type="hidden" ng-model="item_id"> <br>
+                                    <label for="name">Tên Khóa học</label><br>
+                                    <input  type="text" formControlName="item_name" name=""  placeholder="Nhập tên khóa học" aria-describedby="helpId"><br>     
                                     <label for="maLoai">Loại Khóa học</label><br>
-                                    <input formControlName="course_group_id" type="text" name="" id="" > <br>                                
+                                    <input formControlName="item_group_id" type="text" name="" id="" > <br>                             
                                     <label for="file">Ảnh đại diện:</label><br>
                                     <div style="display: flex;">
-                                        <img ng-if="course_image"  style="width: 100px; height: 100px; margin-right: 10px;"  aria-describedby="helpId">
-                                        <input type="text" formControlName="course_image" placeholder="Chọn ảnh đại diện" id = "file"/>
+                                        <img   style="width: 100px; height: 100px; margin-right: 10px;"  aria-describedby="helpId">
+                                        <input type="text" formControlName="item_image" placeholder="Chọn ảnh đại diện" /> <br>
+
                                     </div>
-                                    <label for="donGia">Đơn giá</label>
-                                    <input formControlName="course_price" type="number" name="" id="" class="form-control" placeholder="Đơn giá" aria-describedby="helpId">
+                                    <label for="donGia">Đơn giá: </label><br>
+                                    <input formControlName="item_price" type="number" name="" min="0" value=0 id="" class="form-control" aria-describedby="helpId"> <br>
                                 </div>
                             </div>
-                    
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" value="{{ submit }}" class="btn btn-primary">{{submit}}</button>
+                            <button type="submit" value="{{ submit }}" class="btn btn-primary">{{submit}}</button>  
                         </div>
                     </form>

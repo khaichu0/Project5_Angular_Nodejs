@@ -10,43 +10,55 @@ import { Course } from './course';
 })
 export class TableCourseComponent implements OnInit {
   active=false;
-  submit="thêm mới"
+  stt=0;
+  submit="Thêm mới"
+  p:any
   course:any;
-  coursedata:Course= new Course();
+  courseData:any;
   constructor(private shareData: SharedataService,private formbuilder:FormBuilder) { }
- 
+  
   ngOnInit(): void {
-   
     this.getCoursedata();
+    
   }
   getCoursedata(): void{
     this.shareData.getCourse().subscribe(
       data=>{
         this.course=data;
-        console.log(JSON.stringify(this.course) )
       },
       error=>{
         console.log("Error: "+JSON.stringify(error) );
       })
   }
-  postCoursedata(){
-    this.course={
-    course_name:"",
-    course_teacher:"",
-    course_group_id:"",
-    course_price:0,
-    course_image:"",
+  refesCourseData(){
+    this.courseData={
+    item_name:"",
+    item_grou_id:"",
+    item_price:0,
+    item_image:"",
     } 
     this.active=true;
+    this.submit="Thêm mới"
+    console.log(this.courseData)
   }
-  editCourse(){
+  editCourse(val:any){
+    this.courseData=val;
+    this.active=true;
+    this.submit="Sửa thông tin";
+    console.log(val);
+  }
 
-  }
-  deleteCourse(){
+  deleteCourse(val:any){
+    if(confirm("are you sure?")){
+      this.shareData.deleteCourse(val.item_id).subscribe(data=>{console.log(JSON.stringify(data))});
+      alert("Delete successfull");
+    }
     
   }
-  courseSubmit(){
+ 
+  
 
-  }
+
+
 
 }

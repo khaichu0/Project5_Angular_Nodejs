@@ -16,7 +16,7 @@ import { TableCourseDetailComponent } from './table-course-detail/table-course-d
 import { TableCourseContentComponent } from './table-course-content/table-course-content.component';
 import { AddOrEditCourseComponent } from './add-or-edit-course/add-or-edit-course.component';
 import { Baitap1Component } from './baitap1/baitap1.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 const routes: Routes = [
   {
     path:'home',component:WelcomeAdminComponent,
@@ -42,7 +42,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ReactiveFormsModule,FormsModule,RouterModule.forRoot(routes),CommonModule],
+  imports: [NgxPaginationModule,ReactiveFormsModule,FormsModule,RouterModule.forRoot(routes),CommonModule],
   declarations:[
     AddOrEditCourseComponent,
     TableCourseComponent,

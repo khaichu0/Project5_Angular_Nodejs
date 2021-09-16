@@ -6,8 +6,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { SharedataService } from './share/sharedata.service';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Baitap1Component } from './baitap1/baitap1.component';
-
+import { Baitap1Component } from './baitap1/baitap1.component'; 
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -24,6 +24,7 @@ import { Baitap1Component } from './baitap1/baitap1.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [SharedataService],
   bootstrap: [AppComponent]
