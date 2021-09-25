@@ -7,6 +7,6 @@ export class PhuongTrinhBac2{
         this.b=B;
         this.c=C;
     }
-    
+   
 
 }

@@ -1,24 +1,25 @@
  <!-- Container Fluid-->
  <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800 ">Danh sách Khóa học</h1>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="./">Home</a></li>
-        <li class="breadcrumb-item">Tables</li>
-        <li class="breadcrumb-item active" aria-current="page">Khóa Học</li>
+     
+      <ol class="breadcrumb pull-left">
+        <li class="breadcrumb-item"><a href="./">Trang chủ</a></li>
+        <li class="breadcrumb-item">Khóa học</li>
+        <li class="breadcrumb-item active" aria-current="page">Danh sách khóa học</li>
       </ol>
+      <button  type="button" class="btn btn-primary pull-right"(click)="refesCourseData();" data-toggle="modal" title="Thêm mới một khóa học" data-target="#modelId">Thêm mới</button>
     </div>
 
     <div class="row">
       <div class="col-lg-12 mb-4">
         <!-- Simple Tables -->
-        <button  type="button" class="btn btn-primary"(click)="refesCourseData();" data-toggle="modal" title="Thêm mới một khóa học" data-target="#modelId">Thêm mới</button>
+      
         <div class="card">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
           
           </div>
           <div class="table-responsive">
-            <table class="table align-items-center table-flush">
+            <table class="table align-items-center table-flush ">
               <thead class="thead-light">
                 <tr>
                   <th>STT</th>
@@ -28,29 +29,31 @@
                   <th class="text-center">Thao tác</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody >
                 <tr *ngFor="let item of course|paginate:{itemsPerPage:5,currentPage:p}; index as i">
                   <td>{{i+1 }}</td>
-                  <td > <span class="d-inline-block text-truncate" style="max-width: 300px;" title="{{item.item_name}}">
+                  <td > <span class="d-inline-block text-truncate" style="max-width: 250px;" title="{{item.item_name}}">
                     {{item.item_name}}
                   </span></td>
                   <td ><span class="d-inline-block text-truncate " style="max-width:200px;">{{item.item_group_id }}</span> </td>
                   <td> 
-                    <span *ngIf="item.item_price==0" class="badge badge-warning">Free</span>
-                    <span *ngIf="item.item_price>0" class="badge badge-success">
-                      {{item.item_price.toLocaleString('vi-VN', 
-                        {
-                        style: 'currency',
-                        currency: 'VND'
-                        })
-                      }}
-                  </span>
+                    <span *ngIf="item.item_price===0;else elseBlock" class="badge badge-warning">Free</span>
+                    <ng-template #elseBlock> 
+                      <span class="badge badge-success">
+                          {{item.item_price.toLocaleString('vi-VN', 
+                          {
+                          style: 'currency',
+                          currency: 'VND'
+                          })
+                          }}
+                      </span>
+                    </ng-template>
                   </td>
                   
                   <td class="" style="min-width: 100px; text-align: center;">
-                    <a routerLink="" class="btn btn-success  mr-2 text-light" title="Xem chi tiết thông tin khóa học"><i class="fas fa-list"></i></a>
-                    <a (click)="editCourse(item)" class="btn btn-warning mr-2 text-light" title="Chỉnh sửa thông tin khóa học" data-toggle="modal" title="Thêm mới một khóa học" data-target="#modelId"><i class="fas fa-edit" ></i></a>
-                    <a (click)="deleteCourse(item)" class="btn btn-danger text-light" title="Xóa thông tin khóa học"><i class="fas fa-trash"></i></a>
+                    <a routerLink="" class="btn btn-success  m-1 text-light" title="Xem chi tiết thông tin khóa học"><i class="fas fa-list"></i></a>
+                    <a (click)="editCourseData(item)" class="btn btn-warning m-1 text-light" title="Chỉnh sửa thông tin khóa học" data-toggle="modal" title="Thêm mới một khóa học" data-target="#modelId"><i class="fas fa-edit" ></i></a>
+                    <a (click)="deleteCourseData(item)" class="btn btn-danger m-1  text-light" title="Xóa thông tin khóa học"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
                 
@@ -78,8 +81,36 @@
                       </button>
                   </div>
                   <div class="modal-body">
-                    <app-add-or-edit-course [course]="courseData" [submit]="submit" *ngIf="active" >
-                    </app-add-or-edit-course>
+                    <!-- <app-add-or-edit-course>
+                    </app-add-or-edit-course> -->
+
+                    <form  [formGroup]="formvalue"  >
+                      <div class="container-fluid">
+                          <div class="form-group">
+                              <input type="hidden" class="form-control" formControlName="item_id"> <br>
+                              <label for="name">Tên Khóa học</label><br>
+                              <input  type="text" class="form-control" formControlName="item_name" name=""  placeholder="Nhập tên khóa học" aria-describedby="helpId"><br>     
+                              <label for="maLoai">Loại Khóa học</label><br>
+                              <input class="form-control" formControlName="item_group_id" type="text" placeholder="Nhập loại khóa học" name="" id="" > <br>                             
+                              <label for="file">Ảnh đại diện:</label><br>
+                              <div style="display: flex;">
+                                  <img   style="width: 100px; height: 100px; margin-right: 10px;"  aria-describedby="helpId">
+                                  <input type="text" class="form-control" formControlName="item_image" placeholder="Chọn ảnh đại diện" /> <br>
+
+                              </div>
+                              <label for="donGia">Đơn giá: </label><br>
+                              <input formControlName="item_price" type="number" name="" min="0" value=0 id="" class="form-control" aria-describedby="helpId"> <br>
+                              <p>{{courseData |json}}</p>
+                              <p>{{formvalue.value| json}}</p>
+                              <p>{{submit}}</p>
+                          </div>
+                      </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" (click)="submitCourse()" value="{{submit}}" class="btn btn-primary">{{submit}}</button>  
+                  </div>
+              </form> -->
+                    
                 </div>
               </div>
           </div>

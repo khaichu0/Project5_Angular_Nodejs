@@ -11,13 +11,21 @@ import { Course } from './course';
 export class TableCourseComponent implements OnInit {
   active=false;
   stt=0;
-  submit="Thêm mới"
+  submit!:string;
   p:any
   course:any;
-  courseData:any;
-  constructor(private shareData: SharedataService,private formbuilder:FormBuilder) { }
-  
+  courseData:Course=new Course();
+  formvalue!:FormGroup;
+  constructor(private shareData: SharedataService, private formbuilder:FormBuilder) { }
+
   ngOnInit(): void {
+    this.formvalue=this.formbuilder.group({
+      item_id:[""],
+      item_name:[""],
+      item_group_id:[''],
+      item_price:0,
+      item_image:['']
+    });
     this.getCoursedata();
     
   }
@@ -31,27 +39,47 @@ export class TableCourseComponent implements OnInit {
       })
   }
   refesCourseData(){
-    this.courseData={
-    item_name:"",
-    item_grou_id:"",
-    item_price:0,
-    item_image:"",
-    } 
-    this.active=true;
-    this.submit="Thêm mới"
-    console.log(this.courseData)
+      this.formvalue.patchValue({
+        item_name:"",
+        item_group_id:"",
+        item_price:0,
+        item_image:"",
+        })
+       this.submit="Thêm mới"
   }
-  editCourse(val:any){
-    this.courseData=val;
-    this.active=true;
+  editCourseData(val:any){
+    this.formvalue.patchValue({
+      item_id:val.item_id,
+      item_name:val.item_name,
+      item_group_id:val.item_group_id,
+      item_price:val.item_price,
+      item_image:val.item_image,
+    });
     this.submit="Sửa thông tin";
-    console.log(val);
+
+    
   }
 
-  deleteCourse(val:any){
+  deleteCourseData(val:any){
     if(confirm("are you sure?")){
       this.shareData.deleteCourse(val.item_id).subscribe(data=>{console.log(JSON.stringify(data))});
       alert("Delete successfull");
+    }
+    
+  }
+  submitCourse(){
+    if(this.submit==="Thêm mới"){
+      try {
+        
+      } catch (error) {
+        console.log(error);
+        
+      }
+      alert("add success");
+
+    }
+    else{
+      alert(" edit success");
     }
     
   }

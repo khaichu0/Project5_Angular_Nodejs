@@ -16,9 +16,13 @@ import { TableCourseDetailComponent } from './table-course-detail/table-course-d
 import { TableCourseContentComponent } from './table-course-content/table-course-content.component';
 import { AddOrEditCourseComponent } from './add-or-edit-course/add-or-edit-course.component';
 import { Baitap1Component } from './baitap1/baitap1.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
 const routes: Routes = [
   {
+    //'home',component:PTB2Component
+    //'home',component:WelcomeAdminComponent
     path:'home',component:WelcomeAdminComponent,
     children:[
       { path:'',component:ContainerFluidComponent, pathMatch:'full' },
@@ -44,6 +48,7 @@ const routes: Routes = [
 @NgModule({
   imports: [NgxPaginationModule,ReactiveFormsModule,FormsModule,RouterModule.forRoot(routes),CommonModule],
   declarations:[
+   
     AddOrEditCourseComponent,
     TableCourseComponent,
     TableCourseDetailComponent,
@@ -54,7 +59,8 @@ const routes: Routes = [
     FooterComponent,
     WelcomeAdminComponent,
     PageNotFoundComponent,
-    SignInComponent
+    SignInComponent,
+    
   ],
   exports: [RouterModule]
 })

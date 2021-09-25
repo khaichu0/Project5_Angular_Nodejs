@@ -11,10 +11,14 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     Baitap1Component,
+
+   
 
   ],
   imports: [  
@@ -24,7 +28,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   providers: [SharedataService],
   bootstrap: [AppComponent]
