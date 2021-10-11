@@ -15,16 +15,14 @@ export class SharedataService {
   getCourse():Observable<Course> {
     return this.http.get(this.ApiUrl+'get-all');
   }
-  postCourse( val:any):Observable<Course>{
+  postCourse(val:any):Observable<Course>{
     return this.http.post(this.ApiUrl+'/create-item',val);
-
   }
   editCourse(val:any):Observable<Course>{
     return this.http.put(this.ApiUrl+'/update-item',val);
   }
   deleteCourse(id_course:string):Observable<Course>{
     return this.http.delete(this.ApiUrl+'delete-item/'+id_course);
-   
   }
     
 }

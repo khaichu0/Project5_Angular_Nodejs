@@ -15,8 +15,9 @@ import { TableCourseComponent } from './table-course/table-course.component';
 import { TableCourseDetailComponent } from './table-course-detail/table-course-detail.component';
 import { TableCourseContentComponent } from './table-course-content/table-course-content.component';
 import { AddOrEditCourseComponent } from './add-or-edit-course/add-or-edit-course.component';
-import { Baitap1Component } from './baitap1/baitap1.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { VoucherTableComponent } from './Voucher/voucher-table/voucher-table.component';
+
 
 
 const routes: Routes = [
@@ -60,6 +61,7 @@ const routes: Routes = [
     WelcomeAdminComponent,
     PageNotFoundComponent,
     SignInComponent,
+    VoucherTableComponent
     
   ],
   exports: [RouterModule]

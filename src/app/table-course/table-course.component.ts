@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { SharedataService } from '../share/sharedata.service';
 import { Course } from './course';
@@ -16,8 +16,7 @@ export class TableCourseComponent implements OnInit {
   course:any;
   courseData:Course=new Course();
   formvalue!:FormGroup;
-  constructor(private shareData: SharedataService, private formbuilder:FormBuilder) { }
-
+  constructor(private shareData: SharedataService, private formbuilder:FormBuilder) {}
   ngOnInit(): void {
     this.formvalue=this.formbuilder.group({
       item_id:[""],
@@ -70,12 +69,13 @@ export class TableCourseComponent implements OnInit {
   submitCourse(){
     if(this.submit==="Thêm mới"){
       try {
-        
+        alert(JSON.stringify(this.formvalue.getRawValue()));
+        this.shareData.postCourse(this.formvalue.getRawValue());
       } catch (error) {
         console.log(error);
         
       }
-      alert("add success");
+     
 
     }
     else{
