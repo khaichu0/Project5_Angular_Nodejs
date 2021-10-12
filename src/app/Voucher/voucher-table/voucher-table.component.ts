@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Injector, OnInit } from '@angular/core';
-import { BaseComponent } from 'src/app/base/base.component';
+import { BaseComponent } from 'src/app/core/base/base.component';
 
 @Component({
   selector: 'app-voucher-table',
