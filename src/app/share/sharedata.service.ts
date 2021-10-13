@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { Course } from '../table-course/course';
+import { Course } from '../Course/table-course/course';
 import {catchError, map, tap}from 'rxjs/operators/'
 
 @Injectable({

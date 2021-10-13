@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
-import { SharedataService } from '../share/sharedata.service';
+import { SharedataService } from '../../share/sharedata.service';
 import { Course } from './course';
 
 @Component({

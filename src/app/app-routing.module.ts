@@ -11,10 +11,9 @@ import { NavComponent } from './core/nav/nav.component';
 import { SlidebarComponent } from './core/slidebar/slidebar.component';
 import { ContainerFluidComponent } from './core/container-fluid/container-fluid.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
-import { TableCourseComponent } from './table-course/table-course.component';
-
 import { NgxPaginationModule } from 'ngx-pagination';
 import { VoucherTableComponent } from './Voucher/voucher-table/voucher-table.component';
+import { TableCourseComponent } from './Course/table-course/table-course.component';
 
 
 
@@ -25,7 +24,7 @@ const routes: Routes = [
     path:'home',component:WelcomeAdminComponent,
     children:[
       { path:'',component:ContainerFluidComponent, pathMatch:'full' },
-      { path:'course',component:TableCourseComponent}
+      { path:'course', component: TableCourseComponent}
       
     ]
 },
@@ -45,10 +44,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [NgxPaginationModule,ReactiveFormsModule,FormsModule,RouterModule.forRoot(routes),CommonModule],
+  imports: [
+   
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    CommonModule],
   declarations:[
    
-    TableCourseComponent,
+   TableCourseComponent,
     ContainerFluidComponent,
     NavComponent,
     SlidebarComponent,
@@ -56,7 +61,8 @@ const routes: Routes = [
     WelcomeAdminComponent,
     PageNotFoundComponent,
     SignInComponent,
-    VoucherTableComponent
+    VoucherTableComponent,
+  
     
   ],
   exports: [RouterModule]
