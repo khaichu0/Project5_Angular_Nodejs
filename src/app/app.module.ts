@@ -12,13 +12,14 @@ import { SharedModule } from 'primeng/api';
 
 
 
-import { AddCouponVoucherComponent } from './Voucher/add-coupon-voucher/add-coupon-voucher.component';
-import { AddPriceDealVoucherComponent } from './Voucher/add-price-deal-voucher/add-price-deal-voucher.component';
-import { PriceDealVoucherTableComponent } from './Voucher/price-deal-voucher-table/price-deal-voucher-table.component';
-import { CouponVoucherTableComponent } from './Voucher/coupon-voucher-table/coupon-voucher-table.component';
-import { AddRecomendationVoucherTableComponent } from './Voucher/add-recomendation-voucher-table/add-recomendation-voucher-table.component';
-import { TeacherTableComponent } from './Teacher/teacher-table/teacher-table.component';
-import { AddOrEditTeacherComponent } from './Teacher/add-or-edit-teacher/add-or-edit-teacher.component';
+import { AddCouponVoucherComponent } from './Admin/Voucher/add-coupon-voucher/add-coupon-voucher.component';
+import { AddPriceDealVoucherComponent } from './Admin/Voucher/add-price-deal-voucher/add-price-deal-voucher.component';
+import { PriceDealVoucherTableComponent } from './Admin/Voucher/price-deal-voucher-table/price-deal-voucher-table.component';
+import { CouponVoucherTableComponent } from './Admin/Voucher/coupon-voucher-table/coupon-voucher-table.component';
+import { AddRecomendationVoucherTableComponent } from './Admin/Voucher/add-recomendation-voucher-table/add-recomendation-voucher-table.component';
+import { TeacherTableComponent } from './Admin/Teacher/teacher-table/teacher-table.component';
+import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/add-or-edit-teacher.component';
+import {WelcomeHomePageComponent } from './HomePage/welcome-home-page/welcome-home-page.component';
 
 
 
@@ -34,6 +35,7 @@ import { AddOrEditTeacherComponent } from './Teacher/add-or-edit-teacher/add-or-
     AddRecomendationVoucherTableComponent,
     TeacherTableComponent,
     AddOrEditTeacherComponent,
+    WelcomeHomePageComponent,
    
   ],
   imports: [  
