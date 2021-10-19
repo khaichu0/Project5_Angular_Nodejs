@@ -10,6 +10,9 @@ import { NgxPaginationModule} from 'ngx-pagination';
 import { SharedModule } from 'primeng/api';
 
 
+import { AdminModule } from './Admin/Admin.Module';
+// import { HomePageModule } from './HomePage/HomePage.module';
+
 
 
 import { AddCouponVoucherComponent } from './Admin/Voucher/add-coupon-voucher/add-coupon-voucher.component';
@@ -19,7 +22,9 @@ import { CouponVoucherTableComponent } from './Admin/Voucher/coupon-voucher-tabl
 import { AddRecomendationVoucherTableComponent } from './Admin/Voucher/add-recomendation-voucher-table/add-recomendation-voucher-table.component';
 import { TeacherTableComponent } from './Admin/Teacher/teacher-table/teacher-table.component';
 import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/add-or-edit-teacher.component';
-import {WelcomeHomePageComponent } from './HomePage/welcome-home-page/welcome-home-page.component';
+
+
+
 
 
 
@@ -35,7 +40,8 @@ import {WelcomeHomePageComponent } from './HomePage/welcome-home-page/welcome-ho
     AddRecomendationVoucherTableComponent,
     TeacherTableComponent,
     AddOrEditTeacherComponent,
-    WelcomeHomePageComponent,
+    
+
    
   ],
   imports: [  
@@ -43,10 +49,12 @@ import {WelcomeHomePageComponent } from './HomePage/welcome-home-page/welcome-ho
     FormsModule,
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
+    AdminModule,
+
     ReactiveFormsModule,
     NgxPaginationModule,
     SharedModule,
+    AppRoutingModule,
 
 
   ],
