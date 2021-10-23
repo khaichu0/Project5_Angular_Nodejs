@@ -14,15 +14,20 @@ import { ContainerFluidComponent } from './Admin/core/container-fluid/container-
 import { NgxPaginationModule } from 'ngx-pagination';
 import { VoucherTableComponent } from './Admin/Voucher/voucher-table/voucher-table.component';
 import { TableCourseComponent } from './Admin/Course/table-course/table-course.component';
+import { SearchComponent } from './Admin/Course/search/search.component';
 
 
 
 
 
 const routes: Routes = [
-
+  {
+    path:'search',
+    component: SearchComponent
+  }  
+,
 {
-  path:'',redirectTo:'admin/home',pathMatch:'full'
+  path:'',redirectTo:'admin/login',pathMatch:'full'
 
 },
 {
@@ -32,7 +37,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-
     NgxPaginationModule,
     ReactiveFormsModule,
     FormsModule,
@@ -50,7 +54,7 @@ const routes: Routes = [
     WelcomeAdminComponent,
     PageNotFoundComponent,
     VoucherTableComponent,
-  
+    SearchComponent
     
   ],
   exports: [RouterModule]

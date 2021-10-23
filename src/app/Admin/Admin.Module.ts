@@ -30,7 +30,7 @@ const route:Routes=[
         path:'sign-in',component:SignInComponent
       },
       {
-        path:'a',redirectTo:'/admin/home'
+        path:'',redirectTo:'/admin/home'
       },
       {
         path:'**', component: PageNotFoundComponent

@@ -30,6 +30,7 @@ import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/a
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,8 @@ import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/a
     AddRecomendationVoucherTableComponent,
     TeacherTableComponent,
     AddOrEditTeacherComponent,
+  
+   
     
 
    

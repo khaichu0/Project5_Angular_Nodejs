@@ -1,0 +1,21 @@
+.p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.5rem 0.5rem !important;
+}
+.p-datatable .p-datatable-thead > tr > th {
+    padding: 0.5rem 0.5rem !important; 
+}
+.p-panel .p-panel-header {
+    padding: 0.5rem !important; 
+}
+.p-panel .p-panel-content {
+    padding: 0.5rem !important;
+}
+.form-group {
+    margin-bottom: 0.1rem !important;
+}
+label { 
+    margin-bottom: 0.1rem !important;
+}
+.btn {
+    padding: 0.175rem 0.75rem !important;
+}
