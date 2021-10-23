@@ -14,18 +14,21 @@ import { ContainerFluidComponent } from './Admin/core/container-fluid/container-
 import { NgxPaginationModule } from 'ngx-pagination';
 import { VoucherTableComponent } from './Admin/Voucher/voucher-table/voucher-table.component';
 import { TableCourseComponent } from './Admin/Course/table-course/table-course.component';
-import { SearchComponent } from './Admin/Course/search/search.component';
 
+import { AddCouponVoucherComponent } from './Admin/Voucher/add-coupon-voucher/add-coupon-voucher.component';
+import { AddPriceDealVoucherComponent } from './Admin/Voucher/add-price-deal-voucher/add-price-deal-voucher.component';
+import { PriceDealVoucherTableComponent } from './Admin/Voucher/price-deal-voucher-table/price-deal-voucher-table.component';
+import { CouponVoucherTableComponent } from './Admin/Voucher/coupon-voucher-table/coupon-voucher-table.component';
+import { AddRecomendationVoucherTableComponent } from './Admin/Voucher/add-recomendation-voucher-table/add-recomendation-voucher-table.component';
+import { TeacherTableComponent } from './Admin/Teacher/teacher-table/teacher-table.component';
+import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/add-or-edit-teacher.component';
 
 
 
 
 const routes: Routes = [
-  {
-    path:'search',
-    component: SearchComponent
-  }  
-,
+
+
 {
   path:'',redirectTo:'admin/login',pathMatch:'full'
 
@@ -54,7 +57,14 @@ const routes: Routes = [
     WelcomeAdminComponent,
     PageNotFoundComponent,
     VoucherTableComponent,
-    SearchComponent
+    AddCouponVoucherComponent,
+    AddPriceDealVoucherComponent,
+    PriceDealVoucherTableComponent,
+    CouponVoucherTableComponent,
+    AddRecomendationVoucherTableComponent,
+    TeacherTableComponent,
+    AddOrEditTeacherComponent,
+  
     
   ],
   exports: [RouterModule]

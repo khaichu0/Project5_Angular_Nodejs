@@ -15,13 +15,7 @@ import { AdminModule } from './Admin/Admin.Module';
 
 
 
-import { AddCouponVoucherComponent } from './Admin/Voucher/add-coupon-voucher/add-coupon-voucher.component';
-import { AddPriceDealVoucherComponent } from './Admin/Voucher/add-price-deal-voucher/add-price-deal-voucher.component';
-import { PriceDealVoucherTableComponent } from './Admin/Voucher/price-deal-voucher-table/price-deal-voucher-table.component';
-import { CouponVoucherTableComponent } from './Admin/Voucher/coupon-voucher-table/coupon-voucher-table.component';
-import { AddRecomendationVoucherTableComponent } from './Admin/Voucher/add-recomendation-voucher-table/add-recomendation-voucher-table.component';
-import { TeacherTableComponent } from './Admin/Teacher/teacher-table/teacher-table.component';
-import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/add-or-edit-teacher.component';
+
 
 
 
@@ -34,18 +28,6 @@ import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/a
 @NgModule({
   declarations: [
     AppComponent,
-    AddCouponVoucherComponent,
-    AddPriceDealVoucherComponent,
-    PriceDealVoucherTableComponent,
-    CouponVoucherTableComponent,
-    AddRecomendationVoucherTableComponent,
-    TeacherTableComponent,
-    AddOrEditTeacherComponent,
-  
-   
-    
-
-   
   ],
   imports: [  
    CommonModule,
@@ -53,13 +35,10 @@ import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/a
     HttpClientModule,
     BrowserModule,
     AdminModule,
-
     ReactiveFormsModule,
     NgxPaginationModule,
     SharedModule,
     AppRoutingModule,
-
-
   ],
   providers: [SharedataService],
   bootstrap: [AppComponent]
