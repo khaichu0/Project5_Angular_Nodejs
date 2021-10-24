@@ -2,10 +2,10 @@ import { AfterViewInit, Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { SharedataService } from 'src/app/share/sharedata.service';
 import { Course } from './course';
-
+import { Router, Routes } from '@angular/router';
 @Component({
   selector: 'app-table-course',
-  templateUrl: './table-course.component.html',
+  templateUrl:'./table-course.component.html',
   styleUrls: ['./table-course.component.css'],
 })
 export class TableCourseComponent implements OnInit {
@@ -16,7 +16,7 @@ export class TableCourseComponent implements OnInit {
   course:any;
   courseData:Course=new Course();
   formvalue!:FormGroup;
-  constructor(private shareData: SharedataService, private formbuilder:FormBuilder) {}
+  constructor(private shareData: SharedataService, private formbuilder:FormBuilder,private router:Router) {}
   ngOnInit(): void {
     this.formvalue=this.formbuilder.group({
       item_id:[""],
@@ -82,6 +82,9 @@ export class TableCourseComponent implements OnInit {
       alert(" edit success");
     }
     
+  }
+  selectDetail(item:any){
+    this.router.navigate(["admin/course/detail",item.item_id]); 
   }
  
   

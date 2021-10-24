@@ -51,7 +51,7 @@
                   </td>
                   
                   <td class="" style="min-width: 100px; text-align: center;">
-                    <a routerLink="" class="btn btn-success  m-1 text-light" title="Xem chi tiết thông tin khóa học"><i class="fas fa-list"></i></a>
+                    <a (click)="selectDetail(item)" class="btn btn-success  m-1 text-light" title="Xem chi tiết thông tin khóa học"><i class="fas fa-list"></i></a>
                     <a (click)="editCourseData(item)" class="btn btn-warning m-1 text-light" title="Chỉnh sửa thông tin khóa học" data-toggle="modal" title="Thêm mới một khóa học" data-target="#modelId"><i class="fas fa-edit" ></i></a>
                     <a (click)="deleteCourseData(item)" class="btn btn-danger m-1  text-light" title="Xóa thông tin khóa học"><i class="fas fa-trash"></i></a>
                   </td>
@@ -71,7 +71,7 @@
     </div>
     <!--Row-->
         <!-- Thêm mới  -->
-        <div class="modal fade modal-xl" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal fade " id="modelId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">
               <div class="modal-content">
                   <div class="modal-header">
@@ -89,27 +89,26 @@
                           <div class="form-group">
                               <input type="hidden" class="form-control" formControlName="item_id"> <br>
                               <label for="name">Tên Khóa học</label><br>
-                              <input  type="text" class="form-control" formControlName="item_name" name=""  placeholder="Nhập tên khóa học" aria-describedby="helpId"><br>     
+                              <input  type="text" class="form-control" formControlName="item_name" name=""  placeholder="Nhập tên khóa học" aria-describedby="helpId"> <br>   
                               <label for="maLoai">Loại Khóa học</label><br>
-                              <input class="form-control" formControlName="item_group_id" type="text" placeholder="Nhập loại khóa học" name="" id="" > <br>                             
+                              <input class="form-control" formControlName="item_group_id" type="text" placeholder="Nhập loại khóa học" name="" id="" >      <br>                     
                               <label for="file">Ảnh đại diện:</label><br>
                               <div style="display: flex;">
-                                  <img   style="width: 100px; height: 100px; margin-right: 10px;"  aria-describedby="helpId">
+                                  <img   style="width: 100px; height: 100px; margin-right: 10px;"  aria-describedby="helpId"><br>
                                   <input type="text" class="form-control" formControlName="item_image" placeholder="Chọn ảnh đại diện" /> <br>
 
                               </div>
                               <label for="donGia">Đơn giá: </label><br>
                               <input formControlName="item_price" type="number" name="" min="0" value=0 id="" class="form-control" aria-describedby="helpId"> <br>
-                              <p>{{courseData |json}}</p>
-                              <p>{{formvalue.value| json}}</p>
-                              <p>{{submit}}</p>
+                            
                           </div>
                       </div>
                   <div class="modal-footer">
+                 
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                       <button type="submit" (click)="submitCourse()" value="{{submit}}" class="btn btn-primary">{{submit}}</button>  
                   </div>
-              </form> -->
+              </form> 
                     
                 </div>
               </div>

@@ -10,7 +10,7 @@ import {catchError, map, tap}from 'rxjs/operators/'
 })
 export class SharedataService {
   
-  readonly ApiUrl='https://localhost:44378/api/item/'
+  readonly ApiUrl='https://localhost:44334/api/item/'
   constructor(private http: HttpClient )  { }
   getCourse():Observable<Course> {
     return this.http.get(this.ApiUrl+'get-all');

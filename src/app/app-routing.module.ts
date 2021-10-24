@@ -27,11 +27,11 @@ import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/a
 
 
 const routes: Routes = [
-
-
+{
+  path:'admin',loadChildren: () => import('./Admin/Admin.Module').then((m) => m.AdminModule)
+},
 {
   path:'',redirectTo:'admin/login',pathMatch:'full'
-
 },
 {
   path:'**', component: PageNotFoundComponent

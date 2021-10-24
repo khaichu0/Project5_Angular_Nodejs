@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 
 
 
+const newLocal = './Course/Course.Module';
 const route:Routes=[
     {
         //'home',component:PTB2Component
@@ -20,7 +21,7 @@ const route:Routes=[
         path:'admin',component:WelcomeAdminComponent,
         children:[
           { path:'home',component:ContainerFluidComponent, pathMatch:'full' },
-          { path:'courselist', component: TableCourseComponent}
+          { path:'course',loadChildren: () => import("./Course/Course.module").then((m) => m.CourseModule)}
         ]
     },
     {
@@ -30,7 +31,7 @@ const route:Routes=[
         path:'sign-in',component:SignInComponent
       },
       {
-        path:'',redirectTo:'/admin/home'
+        path:'a',redirectTo:'/admin/home'   
       },
       {
         path:'**', component: PageNotFoundComponent

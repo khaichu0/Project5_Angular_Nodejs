@@ -11,6 +11,8 @@ import { SharedModule } from 'primeng/api';
 
 
 import { AdminModule } from './Admin/Admin.Module';
+import { CourseModule } from './Admin/Course/Course.module';
+import { CourseDetailComponent } from './Admin/Course/course-detail/course-detail.component';
 // import { HomePageModule } from './HomePage/HomePage.module';
 
 
@@ -28,6 +30,7 @@ import { AdminModule } from './Admin/Admin.Module';
 @NgModule({
   declarations: [
     AppComponent,
+    CourseDetailComponent,
   ],
   imports: [  
    CommonModule,
@@ -35,6 +38,7 @@ import { AdminModule } from './Admin/Admin.Module';
     HttpClientModule,
     BrowserModule,
     AdminModule,
+    CourseModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     SharedModule,
