@@ -7,12 +7,14 @@ import { SharedataService } from './share/sharedata.service';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
 import { NgxPaginationModule} from 'ngx-pagination';
-import { SharedModule } from 'primeng/api';
+
 
 
 import { AdminModule } from './Admin/Admin.Module';
-import { CourseModule } from './Admin/Course/Course.module';
+import { CourseModule } from './Admin/Course/Course.Module';
+import { ShareModule } from './share/share.module';
 import { CourseDetailComponent } from './Admin/Course/course-detail/course-detail.component';
+
 // import { HomePageModule } from './HomePage/HomePage.module';
 
 
@@ -33,7 +35,8 @@ import { CourseDetailComponent } from './Admin/Course/course-detail/course-detai
     CourseDetailComponent,
   ],
   imports: [  
-   CommonModule,
+    ShareModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     BrowserModule,
@@ -41,8 +44,8 @@ import { CourseDetailComponent } from './Admin/Course/course-detail/course-detai
     CourseModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    SharedModule,
-    AppRoutingModule,
+    AppRoutingModule
+   
   ],
   providers: [SharedataService],
   bootstrap: [AppComponent]

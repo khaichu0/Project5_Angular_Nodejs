@@ -3,6 +3,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+
+
+
 import { PageNotFoundComponent } from './Admin/core/page-not-found/page-not-found.component';
 import { WelcomeAdminComponent } from './Admin/core/welcome-admin/welcome-admin.component';
 
@@ -22,7 +25,7 @@ import { CouponVoucherTableComponent } from './Admin/Voucher/coupon-voucher-tabl
 import { AddRecomendationVoucherTableComponent } from './Admin/Voucher/add-recomendation-voucher-table/add-recomendation-voucher-table.component';
 import { TeacherTableComponent } from './Admin/Teacher/teacher-table/teacher-table.component';
 import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/add-or-edit-teacher.component';
-
+import { SearchComponent } from './Admin/Course/search/search.component';
 
 
 
@@ -64,6 +67,7 @@ const routes: Routes = [
     AddRecomendationVoucherTableComponent,
     TeacherTableComponent,
     AddOrEditTeacherComponent,
+    SearchComponent,
   
     
   ],

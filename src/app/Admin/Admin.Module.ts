@@ -21,7 +21,7 @@ const route:Routes=[
         path:'admin',component:WelcomeAdminComponent,
         children:[
           { path:'home',component:ContainerFluidComponent, pathMatch:'full' },
-          { path:'course',loadChildren: () => import("./Course/Course.module").then((m) => m.CourseModule)}
+          { path:'course',loadChildren: () => import("./Course/Course.Module").then((m) => m.CourseModule)}
         ]
     },
     {
