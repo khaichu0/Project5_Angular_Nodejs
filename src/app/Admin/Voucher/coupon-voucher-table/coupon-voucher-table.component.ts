@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-coupon-voucher-table',
   templateUrl: './coupon-voucher-table.component.html',

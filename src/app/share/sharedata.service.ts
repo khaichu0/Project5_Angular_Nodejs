@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { Course } from '../Admin/Course/table-course/course';
 import {catchError, map, tap}from 'rxjs/operators/'
+import { Teacher } from '../Admin/Teacher/teacher';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,6 @@ export class SharedataService {
   deleteCourse(id_course:string):Observable<Course>{
     return this.http.delete(this.ApiUrl+'delete-item/'+id_course);
   }
+
     
 }
