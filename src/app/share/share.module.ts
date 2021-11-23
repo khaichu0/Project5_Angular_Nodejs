@@ -12,10 +12,13 @@ import {ConfirmationService} from 'primeng/api';
 import {SliderModule} from 'primeng/slider';
 import {ToolbarModule} from 'primeng/toolbar';
 import {ToastModule} from 'primeng/toast';
+import {TabViewModule} from 'primeng/tabview';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    TabViewModule,
     TableModule,
     PanelModule,
     InputTextModule,
@@ -26,12 +29,17 @@ import {ToastModule} from 'primeng/toast';
     ConfirmDialogModule,
     ToolbarModule,
     SliderModule,
-    ToastModule
+    ToastModule,
+    FormsModule,
+    InputTextModule,
+    CalendarModule,
+    ReactiveFormsModule,
   ],
   exports:[
     
     TableModule,
     PanelModule,
+    TabViewModule,
     InputTextModule,
     CalendarModule,
     DropdownModule,
@@ -40,7 +48,11 @@ import {ToastModule} from 'primeng/toast';
     ConfirmDialogModule,
     ToolbarModule,
     SliderModule,
-    ToastModule
+    ToastModule,
+    FormsModule,
+    InputTextModule,
+    CalendarModule,
+    ReactiveFormsModule,
   ],
   providers:[
     ConfirmationService

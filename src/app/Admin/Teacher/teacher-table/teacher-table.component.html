@@ -21,7 +21,7 @@
                 <h5 class="p-m-0">Manage Products</h5>
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                    <!-- <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." /> -->
                 </span>
             </div>
         </ng-template>
@@ -63,6 +63,18 @@
         </ng-template>
     </p-table>
 </div>
+<p-tabView>
+    <p-tabPanel header="Header 1">
+       Content 1
+    </p-tabPanel>
+    <p-tabPanel header="Header 2">
+        Content 2
+    </p-tabPanel>
+    <p-tabPanel header="Header 3">
+        Content 3
+    </p-tabPanel>
+</p-tabView>
+<!-- 
 <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
     <ng-template pTemplate="content">
         <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.image" class="product-image" *ngIf="product.image">
@@ -122,6 +134,6 @@
         <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
         <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
     </ng-template>
-</p-dialog>
+</p-dialog> -->
 
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

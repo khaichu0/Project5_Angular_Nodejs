@@ -69,17 +69,18 @@ export class TableCourseComponent implements OnInit {
   submitCourse(){
     if(this.submit==="Thêm mới"){
       try {
-        alert(JSON.stringify(this.formvalue.getRawValue()));
+        this.shareData.postCourse(this.formvalue.getRawValue()).subscribe(data=>{console.log(JSON.stringify(data))});
+        alert(JSON.stringify("Thêm thành công"+this.formvalue.getRawValue()));
         this.shareData.postCourse(this.formvalue.getRawValue());
       } catch (error) {
         console.log(error);
         
       }
-     
-
     }
     else{
-      alert(" edit success");
+      this.shareData.editCourse(this.formvalue.getRawValue()).subscribe(data=>{console.log(JSON.stringify(data))});
+        alert(JSON.stringify("Thêm thành công"+this.formvalue.getRawValue()));
+      alert(" edit success"+this.formvalue.getRawValue());
     }
     
   }

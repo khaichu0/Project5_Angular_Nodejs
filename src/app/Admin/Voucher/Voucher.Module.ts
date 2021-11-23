@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule, Routes } from '@angular/router';
-import { TableCourseComponent } from './table-course/table-course.component';
+
 import { PageNotFoundComponent } from '../core/page-not-found/page-not-found.component';
-import { CourseDetailComponent } from './course-detail/course-detail.component';
-import { ShareModule } from 'src/app/share/share.module';
+import { CouponVoucherTableComponent } from './coupon-voucher-table/coupon-voucher-table.component';
+import { AddCouponVoucherComponent } from './add-coupon-voucher/add-coupon-voucher.component';
 
 
 
@@ -14,10 +14,10 @@ const route:Routes=[
     {
         //'home',component:PTB2Component
         //'home',component:WelcomeAdminComponent
-        path:'',component:TableCourseComponent, 
+        path:'',component:CouponVoucherTableComponent, 
     },
     {
-        path:'detail/:id',component:CourseDetailComponent,
+        path:'detail/:id',component:AddCouponVoucherComponent,
     },
     
     {
@@ -29,13 +29,11 @@ const route:Routes=[
   
   ],
   imports: [
-    ShareModule,
-    CommonModule,
-    RouterModule.forChild(route)
+    CommonModule,RouterModule.forChild(route)
   ],
   exports:[
       RouterModule
   ],
 
 })
-export class CourseModule { }
+export class VoucherModule { }
