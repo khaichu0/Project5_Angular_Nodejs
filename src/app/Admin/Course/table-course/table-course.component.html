@@ -96,15 +96,12 @@
                               <div style="display: flex;">
                                   <img   style="width: 100px; height: 100px; margin-right: 10px;"  aria-describedby="helpId"><br>
                                   <input type="text" class="form-control" formControlName="item_image" placeholder="Chọn ảnh đại diện" /> <br>
-
                               </div>
                               <label for="donGia">Đơn giá: </label><br>
                               <input formControlName="item_price" type="number" name="" min="0" value=0 id="" class="form-control" aria-describedby="helpId"> <br>
-                            
                           </div>
                       </div>
-                  <div class="modal-footer">
-                 
+                  <div class="modal-footer">                
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                       <button type="submit" (click)="submitCourse()" value="{{submit}}" class="btn btn-primary">{{submit}}</button>  
                   </div>

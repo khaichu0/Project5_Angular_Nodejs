@@ -13,8 +13,9 @@ import { CourseModule } from './Course/Course.Module';
 import { TeacherModule } from './Teacher/Teacher.module';
 import { VoucherModule } from './Voucher/Voucher.Module';
 import { ShareModule } from '../share/share.module';
-import { AuthGuard } from '../lib/auth.guard'; 
+import { AuthGuard, RoleGuard } from '../lib/auth.guard'; 
 import { UnAuthorizedComponent } from './core/un-authorized/un-authorized.component';
+import { Role } from '../models/role';
 
 
 
@@ -25,10 +26,25 @@ const route:Routes=[
         //'home',component:WelcomeAdminComponent
         path:'',component:WelcomeAdminComponent,
         children:[
-          { path:'',component:ContainerFluidComponent, pathMatch:'full' },
-          { path:'course',loadChildren: () => import("./Course/Course.Module").then((m) => m.CourseModule)},
-          { path:'teacher',loadChildren: () => import("./Teacher/Teacher.module").then((m) => m.TeacherModule)},
-          { path:'voucher',loadChildren: () => import("./Voucher/Voucher.Module").then((m) => m.VoucherModule)},
+          { 
+            path:'',
+            component:ContainerFluidComponent, 
+            pathMatch:'full' 
+          },
+          { 
+            path:'course',
+            loadChildren: () => import("./Course/Course.Module").then((m) => m.CourseModule),
+            canActivate: [RoleGuard], data: { roles: [Role.User,Role.Admin] }
+          },
+          { 
+            path:'teacher',
+            loadChildren: () => import("./Teacher/Teacher.module").then((m) => m.TeacherModule),
+            canActivate: [RoleGuard], data: { roles: [Role.Admin] }
+          },
+          { 
+            path:'voucher',loadChildren: () => import("./Voucher/Voucher.Module").then((m) => m.VoucherModule),
+            canActivate: [RoleGuard], data: { roles: [Role.Admin] }
+          },
           
         ],
         canActivate:[AuthGuard]
