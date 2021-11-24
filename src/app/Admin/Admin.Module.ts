@@ -13,7 +13,8 @@ import { CourseModule } from './Course/Course.Module';
 import { TeacherModule } from './Teacher/Teacher.module';
 import { VoucherModule } from './Voucher/Voucher.Module';
 import { ShareModule } from '../share/share.module';
-
+import { AuthGuard } from '../lib/auth.guard'; 
+import { UnAuthorizedComponent } from './core/un-authorized/un-authorized.component';
 
 
 
@@ -29,10 +30,11 @@ const route:Routes=[
           { path:'teacher',loadChildren: () => import("./Teacher/Teacher.module").then((m) => m.TeacherModule)},
           { path:'voucher',loadChildren: () => import("./Voucher/Voucher.Module").then((m) => m.VoucherModule)},
           
-        ]
+        ],
+        canActivate:[AuthGuard]
     },
     {
-      path:'sign-up',component:SignUpComponent
+      path:'unauthorized',component:UnAuthorizedComponent
     },
     {
       path:'sign-in',component:SignInComponent

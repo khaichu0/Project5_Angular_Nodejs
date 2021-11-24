@@ -24,13 +24,20 @@ import { TeacherTableComponent } from './Admin/Teacher/teacher-table/teacher-tab
 import { AddOrEditTeacherComponent } from './Admin/Teacher/add-or-edit-teacher/add-or-edit-teacher.component';
 import { SearchComponent } from './Admin/Course/search/search.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
-import { AuthGuard } from './lib/auth.guard';
+import { PillTableComponent } from './Admin/Pill/pill-table/pill-table.component';
+
+import { CourseDetailComponent } from './Admin/Course/course-detail/course-detail.component';
+
+import { AddOrEditPillComponent } from './Admin/Pill/add-or-edit-pill/add-or-edit-pill.component';
+import { AddOrEditStudentComponent } from './Admin/Student/add-or-edit-student/add-or-edit-student.component';
+import { StudentTableComponent } from './Admin/Student/student-table/student-table.component';
+
 
 
 const routes: Routes = [
 {
-  path:'',loadChildren: () => import('./Admin/Admin.Module').then((m) => m.AdminModule),
-  canActivate: [AuthGuard]
+  path:'',loadChildren: () => import('./Admin/Admin.Module').then((m) => m.AdminModule)
+
 },
 {
   path:'**', component: PageNotFoundComponent
@@ -48,7 +55,7 @@ const routes: Routes = [
   
    
   declarations:[
-   
+    PillTableComponent,
     TableCourseComponent,
     ContainerFluidComponent,
     NavComponent,
@@ -66,8 +73,10 @@ const routes: Routes = [
     AddOrEditTeacherComponent,
     SearchComponent,
     SignInComponent,
-  
-    
+    CourseDetailComponent,
+    AddOrEditPillComponent,
+    AddOrEditStudentComponent,
+    StudentTableComponent,
   ],
   exports: [RouterModule]
 })

@@ -18,11 +18,6 @@ import { TeacherModule } from './Admin/Teacher/Teacher.module';
 import { VoucherModule } from './Admin/Voucher/Voucher.Module';
 import { AuthModule } from './auth/auth.module';
 
-import { CourseDetailComponent } from './Admin/Course/course-detail/course-detail.component';
-import { PillTableComponent } from './Admin/Pill/pill-table/pill-table.component';
-import { AddOrEditPillComponent } from './Admin/Pill/add-or-edit-pill/add-or-edit-pill.component';
-import { AddOrEditStudentComponent } from './Admin/Student/add-or-edit-student/add-or-edit-student.component';
-import { StudentTableComponent } from './Admin/Student/student-table/student-table.component';
 import { TableModule } from 'primeng/table';
 
 
@@ -49,12 +44,7 @@ import { ErrorInterceptor } from './lib/error.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    CourseDetailComponent,
-    PillTableComponent,
-    AddOrEditPillComponent,
-    AddOrEditStudentComponent,
-    StudentTableComponent,
-  
+
 
   ],
   imports: [ 
