@@ -3,12 +3,19 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 import { SharedataService } from 'src/app/share/sharedata.service';
 import { Course } from './course';
 import { Router, Routes } from '@angular/router';
+import { finalize } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/storage';
 @Component({
   selector: 'app-table-course',
   templateUrl:'./table-course.component.html',
   styleUrls: ['./table-course.component.css'],
 })
 export class TableCourseComponent implements OnInit {
+  title = "cloudsSorage";
+  selectedFile: File = null;
+  fb;
+  downloadURL: Observable<string>;
   active=false;
   stt=0;
   submit!:string;
@@ -16,7 +23,8 @@ export class TableCourseComponent implements OnInit {
   course:any;
   courseData:Course=new Course();
   formvalue!:FormGroup;
-  constructor(private shareData: SharedataService, private formbuilder:FormBuilder,private router:Router) {}
+  ImageUrl:any;
+  constructor(private storage: AngularFireStorage,private shareData: SharedataService, private formbuilder:FormBuilder,private router:Router) {}
   ngOnInit(): void {
     this.formvalue=this.formbuilder.group({
       item_id:[""],
@@ -69,6 +77,7 @@ export class TableCourseComponent implements OnInit {
   submitCourse(){
     if(this.submit==="Thêm mới"){
       try {
+        this.formvalue.patchValue({ item_image:this.ImageUrl });
         this.shareData.postCourse(this.formvalue.getRawValue()).subscribe(data=>{console.log(JSON.stringify(data))});
         alert(JSON.stringify("Thêm thành công"+this.formvalue.getRawValue()));
         this.shareData.postCourse(this.formvalue.getRawValue());
@@ -79,6 +88,7 @@ export class TableCourseComponent implements OnInit {
       }
     }
     else{
+      this.formvalue.patchValue({ item_image:this.ImageUrl });
       this.shareData.editCourse(this.formvalue.getRawValue()).subscribe(data=>{console.log(JSON.stringify(data))});
         alert(JSON.stringify("Thêm thành công"+this.formvalue.getRawValue()));
         alert(" edit success"+this.formvalue.getRawValue());
@@ -92,7 +102,31 @@ export class TableCourseComponent implements OnInit {
   }
  
   
-
+  onFileSelected(event) {
+    var n = Date.now();
+    const file = event.target.files[0];
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, file);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            if (url) {
+              this.ImageUrl= url+' ';
+            }
+            console.log(this.ImageUrl);
+          });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+          console.log(url);
+        }
+      });
+  }
 
 
 

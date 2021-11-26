@@ -74,6 +74,24 @@
         Content 3
     </p-tabPanel>
 </p-tabView>
+<div class="form-group col-12">
+    <input type="file"
+    id="file"
+    #userPhoto
+    (change)="onFileSelected($event)"
+    name="image"
+    autocomplete="off"
+    />
+   </div>
+   <div class="row col-md-12 align-items-center justify-content-center">  
+  
+    
+    
+    <div class="col">  
+      <div #paypal></div>  
+    </div>  
+    
+  </div>  
 <!-- 
 <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
     <ng-template pTemplate="content">

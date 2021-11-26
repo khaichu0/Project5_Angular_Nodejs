@@ -23,6 +23,16 @@ import { TableModule } from 'primeng/table';
 
 import { JwtInterceptor } from './lib/jwt.interceptor';
 import { ErrorInterceptor } from './lib/error.interceptor';
+import { UserModule } from './Admin/Employese/User.Module';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask} from "@angular/fire/storage";
+
+
 
 
 
@@ -46,6 +56,7 @@ import { ErrorInterceptor } from './lib/error.interceptor';
     AppComponent,
 
 
+
   ],
   imports: [ 
     FormsModule, 
@@ -59,9 +70,15 @@ import { ErrorInterceptor } from './lib/error.interceptor';
     TeacherModule,
     VoucherModule,
     AuthModule,
+    UserModule,
     NgxPaginationModule,
-    AppRoutingModule
-   
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AppRoutingModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+
+
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

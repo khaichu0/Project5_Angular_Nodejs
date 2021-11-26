@@ -31,6 +31,7 @@ import { CourseDetailComponent } from './Admin/Course/course-detail/course-detai
 import { AddOrEditPillComponent } from './Admin/Pill/add-or-edit-pill/add-or-edit-pill.component';
 import { AddOrEditStudentComponent } from './Admin/Student/add-or-edit-student/add-or-edit-student.component';
 import { StudentTableComponent } from './Admin/Student/student-table/student-table.component';
+import { UserComponent } from './Admin/Employese/user/user.component';
 
 
 
@@ -55,6 +56,7 @@ const routes: Routes = [
   
    
   declarations:[
+   
     PillTableComponent,
     TableCourseComponent,
     ContainerFluidComponent,
@@ -77,6 +79,8 @@ const routes: Routes = [
     AddOrEditPillComponent,
     AddOrEditStudentComponent,
     StudentTableComponent,
+    UserComponent,
+    
   ],
   exports: [RouterModule]
 })
