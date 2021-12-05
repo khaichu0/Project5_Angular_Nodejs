@@ -8,7 +8,7 @@ const route:Routes=[
     {
         path: '',
         component: UserComponent,
-      },
+    },
 ]
 @NgModule({
   declarations: [

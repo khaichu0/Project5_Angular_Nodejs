@@ -47,6 +47,10 @@ const route:Routes=[
             path:'user',loadChildren: () => import("./Employese/User.Module").then((m) => m.UserModule),
             canActivate: [RoleGuard], data: { roles: [Role.Admin] }
           },
+          { 
+            path:'pill',loadChildren: () => import("./Pill/Pill.Module").then((m) => m.PillModule),
+            canActivate: [RoleGuard], data: { roles: [Role.Admin] }
+          },
           
         ],
         canActivate:[AuthGuard]

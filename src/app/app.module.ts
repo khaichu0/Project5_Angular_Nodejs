@@ -9,7 +9,7 @@ import { MessageService } from 'primeng/api';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
 import { NgxPaginationModule} from 'ngx-pagination';
-
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AdminModule } from './Admin/Admin.Module';
@@ -17,6 +17,7 @@ import { CourseModule } from './Admin/Course/Course.Module';
 import { TeacherModule } from './Admin/Teacher/Teacher.module';
 import { VoucherModule } from './Admin/Voucher/Voucher.Module';
 import { AuthModule } from './auth/auth.module';
+import { PillModule } from './Admin/Pill/Pill.Module';
 
 import { TableModule } from 'primeng/table';
 
@@ -71,7 +72,9 @@ import {
     VoucherModule,
     AuthModule,
     UserModule,
+    PillModule,
     NgxPaginationModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     AngularFireStorageModule,
